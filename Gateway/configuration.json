@@ -1,0 +1,42 @@
+{  
+    "ReRoutes": [  
+        {  
+            "DownstreamPathTemplate": "/api/values",  
+            "DownstreamScheme": "http", 
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "servicea",
+                    "Port": 80
+                }
+            ], 
+            "UpstreamPathTemplate": "/a/",  
+            "UpstreamHttpMethod": [ "Get" ]  
+        },  
+        {  
+            "DownstreamPathTemplate": "/api/values/{id}",  
+            "DownstreamScheme": "http",  
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "servicea",
+                    "Port": 80
+                }
+            ], 
+            "UpstreamPathTemplate": "/a/{id}",  
+            "UpstreamHttpMethod": [ "Get" ]  
+        },  
+        {  
+            "DownstreamPathTemplate": "/api/values",  
+            "DownstreamScheme": "http",  
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "serviceb",
+                    "Port": 80
+                }
+            ],  
+            "UpstreamPathTemplate": "/b/",  
+            "UpstreamHttpMethod": [ "Get" ]  
+        }  
+    ],  
+    "GlobalConfiguration": {
+    }  
+}

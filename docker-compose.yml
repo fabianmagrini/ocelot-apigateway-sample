@@ -1,0 +1,26 @@
+version: '3'
+services:
+  servicea:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://0.0.0.0:80
+    build:
+      context: ./Api.ServiceA
+      dockerfile: Dockerfile
+    ports:
+      - "9001:80" 
+  serviceb:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://0.0.0.0:80
+    build:
+      context: ./Api.ServiceB
+      dockerfile: Dockerfile
+    ports:
+      - "9002:80" 
+  gateway:
+    build:
+      context: ./Gateway
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"   
